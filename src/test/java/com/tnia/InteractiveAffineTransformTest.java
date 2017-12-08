@@ -17,7 +17,7 @@ import net.imglib2.type.numeric.RealType;
 import net.imglib2.util.Util;
 import net.imglib2.view.Views;
 
-public class InteractiveFibriJTest {
+public class InteractiveAffineTransformTest {
 
 	static String workingDir = "./Images/";
 

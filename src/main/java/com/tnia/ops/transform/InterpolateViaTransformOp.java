@@ -64,6 +64,7 @@ public class InterpolateViaTransformOp<I extends EuclideanSpace, R extends RealT
 	@Override
 	public void compute(RandomAccessibleInterval<T> in, R t, IterableInterval<T> out) {
 
+		
 		RealRandomAccess<T> a = ops().transform().interpolate(Views.extendZero(in), new LanczosInterpolatorFactory<T>())
 				.realRandomAccess();
 

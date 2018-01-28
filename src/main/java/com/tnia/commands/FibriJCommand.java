@@ -45,6 +45,8 @@ public class FibriJCommand<T extends RealType<T> & NativeType<T>> implements Com
 	BinaryComputerOp<RandomAccessibleInterval<FloatType>, AffineTransform2D, IterableInterval<FloatType>> transformOp = null;
 
 	public void run() {
+		
+		//averageOrientation=
 
 		try {
 			transformOp = (BinaryComputerOp) Computers.binary(ops, InterpolateViaTransformOp.class,
@@ -85,7 +87,7 @@ public class FibriJCommand<T extends RealType<T> & NativeType<T>> implements Com
 		transmx.translate(0.5, 0);
 		transformOp.compute(imgf, transmx, xm);
 		
-		ui.show(xm);
+		//ui.show(xm);
 
 		// define a affine transform to do the positive shift
 		AffineTransform2D transpx = new AffineTransform2D();
@@ -94,9 +96,9 @@ public class FibriJCommand<T extends RealType<T> & NativeType<T>> implements Com
 
 		IterableInterval<FloatType> dx = ops.math().subtract(xp, xm);
 		
-		ui.show(xp);
+		//ui.show(xp);
 
-		ui.show("dx", dx);
+		//ui.show("dx", dx);
 
 		// compute y-gradient in "y"
 		// selectWindow("Temp");
@@ -125,7 +127,7 @@ public class FibriJCommand<T extends RealType<T> & NativeType<T>> implements Com
 
 		IterableInterval<FloatType> dy = ops.math().subtract(yp,  ym);
 
-		ui.show("dy", dy);
+		//ui.show("dy", dy);
 
 		// compute norm of gradient in "g"
 		// selectWindow("x");
@@ -200,9 +202,9 @@ public class FibriJCommand<T extends RealType<T> & NativeType<T>> implements Com
 		// imageCalculator("multiply","nyy","y");
 		IterableInterval<FloatType> dyy=ops.math().multiply(dy, dy);
 		
-		ui.show("dxx", dxx);
-		ui.show("dxy", dxy);
-		ui.show("dyy", dyy);
+		//ui.show("dxx", dxx);
+		//ui.show("dxy", dxy);
+		//ui.show("dyy", dyy);
 
 		// closing
 		// selectWindow("Temp");
